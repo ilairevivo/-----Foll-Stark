@@ -1,1 +1,1 @@
-console.log("Hello world!");
+console.log("Hola from Javascript-File 1");
