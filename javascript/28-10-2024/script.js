@@ -54,5 +54,42 @@ myNumber2++;
 
 
 console.log("*********************************");
+console.log(10 * 10 === 100);
+console.log(3 * 3 !== 9);
+
+
+
+console.log("*********************************");
+console.log(3 > 2); //true
+console.log(3 < 2); //false
+
+
+console.log(3 >= 2); //true
+
+console.log("*********************************");
+
+var isOK = 10;
+console.log(isOK == "10");
+console.log(isOK != "10");
+
+var isOK = 10;
+console.log(isOK === "10");
+console.log(isOK !== "10");
+
+console.log("*********************************");
+console.log(3 > 2 && 4 > 3)// true
+console.log(3 > 2 && 10 < 4)//false
+
+console.log(3 > 2 || 4 < 3)// true
+console.log(3 < 2 || 10 < 4)//false
+
+console.log("*********************************");
+
+var string = "joni";
+var number = 10;
+var number2 = 10.5;
+console.log(typeof string);
+console.log(typeof number);
+console.log(typeof number2);
 
 
