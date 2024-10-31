@@ -83,7 +83,7 @@ console.log(3 > 2 && 10 < 4)//false
 console.log(3 > 2 || 4 < 3)// true
 console.log(3 < 2 || 10 < 4)//false
 
-console.log("*********************************");
+console.log("*****************************");
 
 var string = "joni";
 var number = 10;
