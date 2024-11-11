@@ -83,20 +83,20 @@
     
 // }
 
-let nights = +prompt("pleasa enter the number of nights:");
-alert("You will stay for " + nights + "nights and the total price is " + nights * totalPrice + "$");
+// let nights = +prompt("pleasa enter the number of nights:");
+// alert("You will stay for " + nights + "nights and the total price is " + nights * totalPrice + "$");
 
-const breakfast = prompt("האם תרצה שנפנק אותך בארוחת בוקר כל יום? no/yes ");
+// const breakfast = prompt("האם תרצה שנפנק אותך בארוחת בוקר כל יום? no/yes ");
 
-switch (breakfast) {
-    case "yes":
-        totalPrice += nights * 30;
-        alert("המחיר הכולל שלך בשביל " + nights + " לילות הוא " + totalPrice + "$");
-        break;
-    case "no":
-        alert("המחיר הכולל ששלך ללא ארוחת בוקר הוא " + totalPrice + "$");
-        break;
-    default:
-        alert("אנחנו לוקחים את האפשרות  לא כבחירה והסכום הכולל שלך בוא " + totalPrice + "$");
-        break;
-}
+// switch (breakfast) {
+//     case "yes":
+//         totalPrice += nights * 30;
+//         alert("המחיר הכולל שלך בשביל " + nights + " לילות הוא " + totalPrice + "$");
+//         break;
+//     case "no":
+//         alert("המחיר הכולל ששלך ללא ארוחת בוקר הוא " + totalPrice + "$");
+//         break;
+//     default:
+//         alert("אנחנו לוקחים את האפשרות  לא כבחירה והסכום הכולל שלך בוא " + totalPrice + "$");
+//         break;
+// }
