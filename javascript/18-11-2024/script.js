@@ -107,19 +107,56 @@ const numbers4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 //     }
 // });
 // console.log(number4);
-const number4 = numbers4.filter((num) =>   num % 2 === 0).map((num) => {
-   return num * 100
+const number4 = numbers4.filter((num) => num % 2 === 0).map((num) => {
+    return num * 100
 })
 console.log(number4);
 
 console.log('****************** Exercise map 3*****************\n\n');
 
-const countries1 = ['yeroshalem','london','paris','roma','tukyo'];
+const countries1 = ['yeroshalem', 'london', 'paris', 'roma', 'tukyo'];
 const countries2 = ['israel', 'usa', 'france', 'ytali', 'spain'];
 
-const cantrys = countries2.map((item,index) =>  item + "-" + countries1[item,index]) 
+const cantrys = countries2.map((item, index) => item + " - " + countries1[item, index]);
+
 console.log(cantrys);
 
+
+console.log('***************** reduce **************\n\n');
+const ages = [31, 44, 45, 42, 39, 37, 26, 21];
+
+
+const sum = ages.reduce((acc, item) => {
+    return acc + item;
+}, 0);
+
+
+console.log('ages average in our humble class is: ' + sum / ages.length);
+
+
+console.log('********************height***************');
+
+const heights = [100, 170, 160, 200, 150, 140];
+
+const height = heights.reduce((acc, item) => {
+    if (acc < item) {
+        return item
+    }else{
+        return acc
+    }
+}, 0);
+
+console.log('the hight student our humble class is: ' + height);
+
+console.log('***************** Exerice ***************');
+const height2 = heights.reduce((acc, item) => {
+    if (acc > item) {
+        return item
+    } else {
+        return acc
+    }
+}, 0);
+console.log(height2);
 
 
 

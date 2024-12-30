@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <select onchange="printSelect()" id="select" >
+        <option value="Easy">Easy</option>
+        <option value="medium">medium</option>
+        <option value="hard">hard</option>
+    </select>
+    <div id="container">
+        <p>hello</p>
+    </div>
+
+    <div id="empty"></div>
+
+    <div id ="box1">
+        <p>box 1</p>
+    </div>
+    <button onclick="removBox1()">remove box 1</button>
+
+    <div id="box2">
+        <p>box 1</p>
+    </div>
+    <button onclick="removBox2()">remove box 2</button>
+
+    <ul id="list">
+        <li>yes</li>
+        <li>no</li>
+        <li>maybe</li>
+        <li>i Dont know</li>
+    </ul>
+    <button ondblclick="renovItemFromList()"> remov from list</button>
+
+    <div id="container1">
+        <h1>כפתור זה מוריד את העיצוב של העמוד </h1>
+        <button ondblclick="removCss()">remove css</button>
+    </div>
+    <div class="cricle"></div>
+</body>
+
+</html>
