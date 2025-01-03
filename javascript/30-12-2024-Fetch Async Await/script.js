@@ -48,14 +48,12 @@ const israel = await getOneCountry("israel").then((data) => {
 
 console.log("*********************** exercise 2*********************");
 
-const getCountrysInAsia = async () => {
+const getCountrysInHerope = async () => {
     const request = await fetch('https://restcountries.com/v3.1/region/europe');
     const data = await request.json();
     return data;
 }
 
-const asia = await getCountrysInAsia().then((data) => {
-    console.log(data);
-}).catch((error) => {
-    console.log(error);
-});
+const  countries = await getCountrysInHerope();
+const names = countries.filter((country) => country.name);
+console.log(names);

@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.img {
+    height: 35%;
+}
+
+.fa:hover {
+    cursor: pointer;
+}
+i{
+    animation: growShrink 3s infinite;
+
+}
+
+@keyframes growShrink {
+    0% {
+        transform: scale(1);
+      box-shadow: inset ;
+    }
+
+    50% {
+        transform: scale(1.4);
+        
+
+    }
+
+    100% {
+        transform: scale(1);
+
+    }
+}
+
