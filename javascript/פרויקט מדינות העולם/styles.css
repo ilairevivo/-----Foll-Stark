@@ -11,20 +11,47 @@
 .fa:hover {
     cursor: pointer;
 }
-i{
-    animation: growShrink 3s infinite;
+
+#search-input {
+    animation: margin 3s !important;
+    background: linear-gradient(to right, #ffffff, #4259ec8d);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+#inputLike{
+    margin-top: 50px;
+        margin-bottom: 50px;
+        margin-left: 20px;
+        width: 170px;
+        height: 40px;
+        text-align: center;
+}
+#showAll {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 10px;
+    width: 180px;
+    height: 40px;
+    text-align: center;
+}
+
+
+i {
+    animation: growShrink 2s infinite;
 
 }
 
+/* animation for the icon */
 @keyframes growShrink {
     0% {
         transform: scale(1);
-      box-shadow: inset ;
     }
 
     50% {
         transform: scale(1.4);
-        
+
 
     }
 
@@ -33,4 +60,3 @@ i{
 
     }
 }
-

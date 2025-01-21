@@ -122,3 +122,4 @@ function setImages() {
 
 printData();
 setImages();
+

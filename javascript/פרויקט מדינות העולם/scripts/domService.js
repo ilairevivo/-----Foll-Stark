@@ -1,6 +1,47 @@
 import { countries, reset, search } from "./countriesService.js";
 const cardsContainer = document.getElementById('cards');
 
+// הוספת סטיילים לאנימציות
+const style = document.createElement('style');
+style.textContent = `
+    .card {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .card.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .fade-out {
+        opacity: 0;
+        transform: scale(0.9);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .container-fade {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .container-fade.show {
+        opacity: 1;
+    }
+`;
+document.head.appendChild(style);
+
+// פונקציה להוספת אנימציית כניסה לכרטיסים
+const animateCards = () => {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.classList.add('show');
+        }, index * 100);
+    });
+};
+
 document.getElementById('search-input').addEventListener('input', (event) => {
     console.log(event.target.value);
     reset();
@@ -8,62 +49,94 @@ document.getElementById('search-input').addEventListener('input', (event) => {
 
     if (!event.target.value || event.target.value === '') {
         createCards();
+        setTimeout(animateCards, 50);
     } else {
         search(event.target.value);
         createCards();
+        setTimeout(animateCards, 50);
     }
-
 });
 
-const generateCard = (country) => {
-    // create a card & style it
-    const card = document.createElement('div');
-    card.className = "card m-2 col-sm-12 col-md-3"
+// פונקציה להצגת כל המדינות עם אנימציה
+const showAllCountries = () => {
+    // אנימציית יציאה
+    cardsContainer.classList.add('container-fade');
 
-    // create an image, style it and set the source
+    setTimeout(() => {
+        cardsContainer.innerHTML = '';
+        createCards();
+
+        // אנימציית כניסה
+        cardsContainer.classList.add('show');
+        animateCards();
+
+        setTimeout(() => {
+            cardsContainer.classList.remove('container-fade', 'show');
+        }, 300);
+    }, 300);
+};
+
+// פונקציה להצגת מדינות מועדפות עם אנימציה
+const showFavoriteCountries = () => {
+    // אנימציית יציאה
+    cardsContainer.classList.add('container-fade');
+
+    setTimeout(() => {
+        cardsContainer.innerHTML = '';
+        const favorites = JSON.parse(localStorage.getItem('favorites') || '{}');
+        const favoriteCountries = countries.filter(country => favorites[country.name.common]);
+        favoriteCountries.forEach(country => generateCard(country));
+
+        // אנימציית כניסה
+        cardsContainer.classList.add('show');
+        animateCards();
+
+        setTimeout(() => {
+            cardsContainer.classList.remove('container-fade', 'show');
+        }, 300);
+    }, 300);
+};
+
+document.getElementById('inputLike').addEventListener('click', showFavoriteCountries);
+document.getElementById('showAll').addEventListener('click', showAllCountries);
+
+const generateCard = (country) => {
+    const card = document.createElement('div');
+    card.className = "card m-2 col-sm-12 col-md-3";
+
     const cardImg = document.createElement('img');
     cardImg.src = country.flags.png;
     cardImg.className = "card-img-top img mt-2 border rounded shadow";
 
-    // create a card body, style it
     const cardBody = document.createElement('div');
     cardBody.className = "card-body";
 
-    // create a card title, style it and set the text
     const cardTitle = document.createElement('h5');
     cardTitle.className = "card-title";
     cardTitle.innerText = country.name.common;
 
-    // create a paragraph for population, style it and set the text
     const population = document.createElement('p');
     population.className = "card-text";
     population.innerText = `Population: ${country.population}`;
 
-    // create a paragraph for region, style it and set the text
     const region = document.createElement('p');
     region.className = "card-text";
     region.innerText = `Region: ${country.region}`;
 
-    // create a card footer, style it
     const cardFooter = document.createElement('div');
     cardFooter.className = "card-footer d-flex justify-content-center mb-2";
 
-    // create a heart icon, style it
     let heartIcon = document.createElement('i');
     heartIcon.className = "fa fa-heart text-dark";
 
-    
     const toggleFavorite = (countryName, heartIcon) => {
-        // מקבל את המידע השמור או מייצר אובייקט ריק אם אין מידע
         const favorites = JSON.parse(localStorage.getItem('favorites') || '{}');
 
         if (heartIcon.classList.contains('text-dark')) {
-            // אם הלב שחור - הופך לאדום ושומר במאגר
             favorites[countryName] = true;
             heartIcon.classList.remove('text-dark');
             heartIcon.classList.add('text-danger');
         } else {
-            // אם הלב אדום - הופך לשחור ומוחק מהמאגר
             delete favorites[countryName];
             heartIcon.classList.remove('text-danger');
             heartIcon.classList.add('text-dark');
@@ -75,44 +148,30 @@ const generateCard = (country) => {
         toggleFavorite(country.name.common, heartIcon);
     });
 
-   
-        
+    const favorites = JSON.parse(localStorage.getItem('favorites') || '{}');
+    if (favorites[country.name.common]) {
+        heartIcon.classList.remove('text-dark');
+        heartIcon.classList.add('text-danger');
+    }
 
-      
-        const favorites = JSON.parse(localStorage.getItem('favorites') || '{}');
-        console.log("Checking favorites for", country.name.common, ":", favorites);
-        if (favorites[country.name.common]) {
-            console.log("Found in favorites, making heart red");
-            heartIcon.classList.remove('text-dark');
-            heartIcon.classList.add('text-danger');
-        }
-
-        
-    
-    // });
-
-    // add the heart icon to the card footer
     cardFooter.appendChild(heartIcon);
-
-    // add the card title, population and region to the card body
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(population);
     cardBody.appendChild(region);
-
-    // add the image, card body and card footer to the card
     card.appendChild(cardImg);
     card.appendChild(cardBody);
     card.appendChild(cardFooter);
-
-    // get the cards container and append the card
     cardsContainer.appendChild(card);
 }
 
-// create cards for all countries in the array
 const createCards = () => {
     for (const country of countries) {
         generateCard(country);
     }
 }
+
+// טעינה מיידית של המדינות
+createCards();
+setTimeout(animateCards, 50);
 
 export { createCards };
