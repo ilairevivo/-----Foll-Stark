@@ -1,1 +1,1 @@
-import { registerForm, loginForm } from "./domService.js";
+import { registerForm, loginForm ,drawTableRows } from "./domService.js";

@@ -2,7 +2,10 @@ import { drawTableRows } from "./domService.js";
 
 export class User {
     static usersList = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [];
-    static count = 0;
+    // עדכון המונה לפי המספר הגבוה ביותר הקיים
+    static count = User.usersList.length > 0
+        ? Math.max(...User.usersList.map(user => user.id))
+        : 0;
 
     id;
     firstName;
@@ -31,15 +34,43 @@ export class User {
 
     static login(id) {
         const user = User.usersList.find((user) => user.id === id);
-        user.isLogedIn = true;
-        localStorage.setItem('users', JSON.stringify(User.usersList));
-        drawTableRows(User.usersList);
+        if (user) {
+            user.isLogedIn = true;
+            localStorage.setItem('users', JSON.stringify(User.usersList));
+            drawTableRows(User.usersList);
+        }
     }
 
     static logout(id) {
         const user = User.usersList.find((user) => user.id === id);
-        user.isLogedIn = false;
+        if (user) {
+            user.isLogedIn = false;
+            localStorage.setItem('users', JSON.stringify(User.usersList));
+            drawTableRows(User.usersList);
+        }
+    }
+
+    static editUser(id, firstName, lastName, email, password) {
+        console.log('Editing user:', { id, firstName, lastName, email, password });
+
+        // מציאת האינדקס של המשתמש במערך
+        const userIndex = User.usersList.findIndex((user) => user.id === id);
+
+        if (userIndex === -1) {
+            throw new Error('משתמש לא נמצא');
+        }
+        User.usersList[userIndex] = {
+            ...User.usersList[userIndex],
+            firstName,
+            lastName,
+            email,
+            password
+        };
+
+        console.log('Updated user:', User.usersList[userIndex]);
         localStorage.setItem('users', JSON.stringify(User.usersList));
         drawTableRows(User.usersList);
+
+        return User.usersList[userIndex];
     }
 }
