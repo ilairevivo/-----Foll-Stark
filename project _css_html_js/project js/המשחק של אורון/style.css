@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
-    background-image: url('./תמונה\ של\ WhatsApp‏\ 2024-12-16\ בשעה\ 21.59.08_644ce0dd.jpg');
+    background-image: url(./../../img/תמונה\ של\ WhatsApp‏\ 2024-12-16\ בשעה\ 21.59.08_644ce0dd.jpg);
         background-size: cover;
         /* זה יגרום לתמונה לכסות את כל הרקע */
         background-repeat: no-repeat;

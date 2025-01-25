@@ -1,9 +1,15 @@
    h1 {
        font: normal normal normal 40px/80px Satisfy;
+      
    }
 
    button {
        animation: infinite 5s linear 0s normal none running shake;
+   }
+
+   #titleProjectJs {
+
+      margin-top: 100px;
    }
 
    @keyframes shake {
@@ -11,42 +17,52 @@
            transform: translate(1px, 1px) rotate(0deg);
            background-color: #004cff;
        }
+
        10% {
            transform: translate(-1px, -2px) rotate(-1deg);
            background-color: #2003d9;
        }
+
        20% {
            transform: translate(-3px, 0px) rotate(1deg);
            background-color: #000b87;
        }
+
        30% {
            transform: translate(3px, 2px) rotate(0deg);
            background-color: #010a71;
        }
+
        40% {
            transform: translate(1px, -1px) rotate(1deg);
            background-color: #047dd9;
        }
+
        50% {
            transform: translate(-1px, 2px) rotate(-1deg);
            background-color: #047dd9;
        }
+
        60% {
            transform: translate(-3px, 1px) rotate(0deg);
            background-color: #010a71;
        }
+
        70% {
            transform: translate(3px, 1px) rotate(-1deg);
            background-color: #000b87;
        }
+
        80% {
            transform: translate(-1px, -1px) rotate(1deg);
            background-color: #2003d9;
        }
+
        90% {
            transform: translate(1px, 2px) rotate(0deg);
            background-color: #004cff;
        }
+
        100% {
            transform: translate(1px, -2px) rotate(-1deg);
            background-color: #004cff;
@@ -350,7 +366,7 @@
        }
    }
 
-   .form-control{
+   .form-control {
        width: 100%;
        border-radius: 0px !important;
        border-bottom: #004cff 4px solid !important;
