@@ -1,10 +1,18 @@
+   body{
+       background: linear-gradient(#281EFF, #2DFF8C) 100% no-repeat;
+       background-attachment: fixed;
+   }
+   .container-logos{
+    background-color: #ffffff;
+   }
+   
    h1 {
        font: normal normal normal 40px/80px Satisfy;
 
    }
 
    .navbar {
-       background: linear-gradient(135deg, #ffffff 0%, #2003d9 100%);
+       background: linear-gradient(135deg, #2DFF8C 0%, #2003d9 100%);
        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
        transition: all 0.3s ease;
    }
@@ -429,3 +437,6 @@
        border-radius: 0px !important;
        border-bottom: #004cff 4px solid !important;
    }
+
+   
+
