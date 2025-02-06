@@ -15,14 +15,14 @@ startGame.addEventListener('click', function (e) {
 });
 
 const fruits = [
-    'apple.jpg', 'apple.jpg',
-    'זית.jpg', 'זית.jpg',
-    'orange.jpg', 'orange.jpg',
-    'strawberry.jpg', 'strawberry.jpg',
-    'grape.jpg', 'grape.jpg',
-    'watermelon.jpg', 'watermelon.jpg',
-    'kiwi.jpg', 'kiwi.jpg',
-    'pear.jpg', 'pear.jpg'
+    './imgs/apple.jpg', './imgs/apple.jpg',
+    './imgs/זית.jpg', './imgs/זית.jpg',
+    './imgs/orange.jpg', './imgs/orange.jpg',
+    './imgs/strawberry.jpg', './imgs/strawberry.jpg',
+    './imgs/grape.jpg', './imgs/grape.jpg',
+    './imgs/watermelon.jpg', './imgs/watermelon.jpg',
+    './imgs/kiwi.jpg', './imgs/kiwi.jpg',
+    './imgs/pear.jpg', './imgs/pear.jpg'
 ];
 
 let cardElements = [];
@@ -30,6 +30,7 @@ let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
 let score = 0;
+
 
 const gameContainer = document.getElementById('game-container');
 const scoreDisplay = document.getElementById('score');
@@ -46,7 +47,7 @@ function createCards() {
         const card = document.createElement('div');
         card.classList.add('card');
         card.dataset.value = fruit;
-        card.style.backgroundImage = `url(קלפי\ משחק\ זכרון.jpeg)`;
+        card.style.backgroundImage = `url(./imgs/קלפי\ משחק\ זכרון.jpeg)`;
         card.addEventListener('click', flipCard);
         gameContainer.appendChild(card);
         cardElements.push(card);
@@ -93,11 +94,11 @@ function unflipCards() {
     setTimeout(() => {
         if (firstCard) {
             firstCard.classList.remove('flipped');
-            firstCard.style.backgroundImage = 'url("קלפי\ משחק\ זכרון.jpeg")';
+            firstCard.style.backgroundImage = 'url("./imgs/קלפי\ משחק\ זכרון.jpeg")';
               }
         if (secondCard) {
             secondCard.classList.remove('flipped');
-            secondCard.style.backgroundImage = 'url("קלפי\ משחק\ זכרון.jpeg")';
+            secondCard.style.backgroundImage = 'url("./imgs/קלפי\ משחק\ זכרון.jpeg")';
         }
         resetBoard();
     }, 1000);
@@ -127,3 +128,4 @@ restartButton.addEventListener('click', restartGame);
 
 loadScore();
 createCards();
+

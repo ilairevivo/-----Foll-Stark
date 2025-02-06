@@ -47,6 +47,8 @@ function checkDraw() {
     return gameBoard.every(cell => cell !== '');
 }
 
+
+
 function restartGame() {
     gameBoard = ['', '', '', '', '', '', '', '', ''];
     gameActive = true;

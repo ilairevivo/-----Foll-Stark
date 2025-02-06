@@ -1,7 +1,7 @@
     body {
         font-family: Arial, sans-serif;
         text-align: center;
-        background-image: url(./משחק\ זיכרון.jpg);
+        background-image: url(./imgs/משחק\ זיכרון.jpg);
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -17,7 +17,7 @@
     .card {
         width: 120px;
         height: 120px;
-        background-image: url(קלפי\ משחק\ זכרון.jpeg);
+        background-image: url(./imgs/קלפי\ משחק\ זכרון.jpeg);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -101,7 +101,7 @@
         border: 3px solid #000000;
         border-radius: 10px;
         cursor: pointer;
-        animation: alternate 10s infinite;
+       
     }
 
     #start-button:hover{
@@ -111,11 +111,4 @@
         transition: all 0.3s;
     }
 
-    @keyframes alternate {
-        0% {
-     box-shadow: #ff0000 5px 0px 30px;
-        }
-        100% {
-          box-shadow: #ffffff 5px 0px 30px;
-        }
-    }
+    
