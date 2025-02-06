@@ -59,6 +59,9 @@ function restartGame() {
 
 cells.forEach((cell, index) => {
     cell.addEventListener('click', (e) => handleCellClick(e, index));
+    
+    
 });
 
 restartBtn.addEventListener('click', restartGame);
+

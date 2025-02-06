@@ -30,7 +30,7 @@
     font-size: 85px;
     font-style: normal;
     margin-left: 35%;
-    text-shadow: 4px 0px 0px 20px rgb(255, 255, 255);
+    text-shadow: #ffffff 5px 0px 30px;
     animation: slideFromRight 2s ease-out forwards;
 
 }
@@ -84,7 +84,7 @@ h2{
     margin-top: 50px;
     margin-bottom: 50px;
     margin-left: 10px;
-    width: 180px;
+    width: 180px;                       
     height: 40px;
     text-align: center;
 }
@@ -93,4 +93,81 @@ h2{
     font-size: 20px;
     font-weight: bold;
     text-align: center;
+}
+
+img{
+    height: 200px;
+}
+#cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 10px;
+    width: 300px !important;
+    height: 500px !important;
+    border:#bb0202 solid 1px;
+   img:hover{
+        transform: scale(1.1);
+    }
+}
+
+button{
+    background-color: #bb0202  !important;
+    color: #000 !important;
+}
+button:hover{
+   translate: 0px -5px;
+   background-color: black !important;
+   color: #bb0202 !important;
+   
+}
+
+.favorite-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.favorite-btn:hover {
+    transform: scale(1.1);
+}
+
+.favorite-btn.active {
+    opacity: 1;
+    color: red;
+}
+
+.favorite-btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1000;
+    width: 400px;
+    height: 400px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+}
+
+.popup.show {
+    display: block;
+    opacity: 1;    
 }
