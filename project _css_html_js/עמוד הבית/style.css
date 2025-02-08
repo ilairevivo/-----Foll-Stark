@@ -334,7 +334,7 @@
        .logo-foter {
            display: flex;
            flex-wrap: wrap;
-           height: 200px;
+           height: 400px;
 
        }
    }
@@ -406,6 +406,7 @@
        background-repeat: no-repeat;
        background-size: 100%;
        background-position: center center;
+       background-color: #00000000;
 
        h1 {
            font: normal normal 900 48px/53px Satisfy;
