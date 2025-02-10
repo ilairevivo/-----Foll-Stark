@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -5,71 +11,89 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-
+    min-height: 100vh;
+    padding: 20px;
 }
 
 .GeneralArea {
-
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .container {
-    max-width: 640px;
-    height: 700px;
-    width: 21%;
-    background-image: linear-gradient(to right, rgba(239, 236, 236, 0), rgb(255, 255, 255));
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    height: auto;
+    background-image: linear-gradient(to right, rgba(239, 236, 236, 0.9), rgb(255, 255, 255));
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    margin-bottom: 20px;
 }
 
 h1 {
     text-align: center;
+    margin-bottom: 20px;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 label {
     display: block;
     margin-bottom: 5px;
+    font-weight: bold;
 }
 
 input,
 select,
 button {
-    width: 80%;
-    padding: 10px;
-    height: 5%;
+    width: 100%;
+    padding: 12px;
     margin-bottom: 10px;
     border: 1px solid #000000;
     border-radius: 10px;
-    background-color: #fdf57fba;
+    background-color: rgba(253, 245, 127, 0.73);
+    font-size: 1rem;
 }
-.buttons{
+
+#textColor,
+#bgColor {
+    height: 50px;
+    padding: 5px;
+}
+
+.buttons {
     display: flex;
-    justify-content: center;
-    align-items: center;   
-    button{
-        margin: 10px;
-    } 
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
 }
 
-
-
-#textColor,#bgColor{
-    width: 85%;
-    height: 60px;
-
+.buttons button {
+    flex: 1;
+    min-width: 150px;
 }
+
 button {
     background-color: #ff1100;
     color: rgb(52, 23, 23);
-    font-size:small;
-    border: 1px;
+    border: none;
     cursor: pointer;
     box-shadow: #000000 5px 0px 30px;
     animation: growShrink 3s infinite;
+    transition: transform 0.3s ease;
+    font-weight: bold;
 }
 
 @keyframes growShrink {
@@ -79,33 +103,78 @@ button {
     }
 
     50% {
-        transform: scale(1.1);
+        transform: scale(1.05);
         background-color: rgb(255, 111, 0);
-
     }
 
     100% {
         transform: scale(1);
         background-color: red;
-
     }
 }
 
 button:hover {
     background-color: #000000;
-    
+    color: white;
 }
 
 .output {
+    flex: 1;
+    min-width: 300px;
+    max-width: 800px;
+    height: 600px;
     border: 1px solid #000000;
-    padding: 10px;
+    padding: 20px;
     background: #fff;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgb(0, 0, 0);
-    width: 65%;
-    height: 600px;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
-    margin: auto;
 }
 
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .GeneralArea {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container,
+    .output {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .buttons button {
+        width: 100%;
+    }
+
+    input,
+    select,
+    button {
+        font-size: 16px;
+        /* Better for mobile touch */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .output {
+        height: 400px;
+    }
+}
