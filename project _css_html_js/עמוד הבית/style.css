@@ -1,11 +1,12 @@
-   body{
+   body {
        background: linear-gradient(#281EFF, #2DFF8C) 100% no-repeat;
        background-attachment: fixed;
    }
-   .container-logos{
-    background-color: #ffffff;
+
+   .container-logos {
+       background-color: #ffffff;
    }
-   
+
    h1 {
        font: normal normal normal 40px/80px Satisfy;
 
@@ -18,7 +19,7 @@
    }
 
    .navbar-nav .nav-link {
-       color: #2DFF8C;
+       color: #03d923;
        font-weight: 500;
        position: relative;
        transition: color 0.3s ease;
@@ -150,12 +151,47 @@
    }
 
 
-   @media (max-width: 780px) {
+   @media (max-width: 880px) {
        .logo {
            display: flex;
            flex-wrap: wrap;
            margin-top: -0px;
 
+       }
+
+       #img-logo1 {
+           width: 40px !important;
+           height: 40px !important;
+           background-size: 70px !important;
+           margin: auto 0px !important;
+       }
+
+       #img-logo2 {
+           width: 40px !important;
+           height: 40px !important;
+           background-size: 70px !important;
+           margin: auto 0px !important;
+       }
+
+       #img-logo3 {
+           width: 40px !important;
+           height: 40px !important;
+           background-size: 70px !important;
+           margin: auto 0px !important;
+       }
+
+       #img-logo4 {
+           width: 40px !important;
+           height: 40px !important;
+           background-size: 70px !important;
+           margin: auto 0px !important;
+       }
+
+       .logo-img-js {
+           width: 40px !important;
+           height: 40px !important;
+           margin-top: 0px !important;
+           margin: auto 0px !important;
        }
    }
 
@@ -305,14 +341,14 @@
    .logo-foter {
        width: 100%;
        box-shadow: 0px 0px 7px 7px #00000029;
-       background:repeating-linear-gradient(45deg, #ffffff 20%, #9afbfe 80%);
+       background: repeating-linear-gradient(45deg, #ffffff 20%, #9afbfe 80%);
    }
 
    .img-logo-foter {
        animation: margin 3s infinite !important;
 
-     
-       
+
+
    }
 
    @keyframes margin {
@@ -328,7 +364,7 @@
            margin-top: 0px;
        }
 
-    }
+   }
 
    @media (max-width: 780px) {
        .logo-foter {
@@ -439,11 +475,11 @@
        border-bottom: #004cff 4px solid !important;
    }
 
-   
-#title-foter{
-    text-align: center;
-    font-size: 50px;
-    color: #1500ff;
-    font-weight: bold;
-    margin-bottom: -20px;
-}
+
+   #title-foter {
+       text-align: center;
+       font-size: 50px;
+       color: #1500ff;
+       font-weight: bold;
+       margin-bottom: -20px;
+   }
