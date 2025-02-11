@@ -171,3 +171,44 @@ button:hover{
     display: block;
     opacity: 1;    
 }
+
+#search-input {
+    border: 2px solid #bb0202;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+    text-align: right;
+    direction: rtl;
+}
+
+#search-input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(187, 2, 2, 0.5);
+    border-color: #890101;
+}
+
+#search-input::placeholder {
+    color: #666;
+    text-align: right;
+}
+
+.card button.btn-danger {
+    background-color: #dc3545 !important;
+    color: white !important;
+}
+
+.card button.btn-danger:hover {
+    background-color: #c82333 !important;
+    color: white !important;
+}
+
+.container h2,
+.container h3 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.row.justify-content-center {
+    margin-top: 20px;
+}

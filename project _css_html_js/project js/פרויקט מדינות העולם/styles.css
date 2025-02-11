@@ -39,7 +39,7 @@
 }
 
 
-i {
+img {
     animation: growShrink 2s infinite;
 
 }
@@ -51,7 +51,7 @@ i {
     }
 
     50% {
-        transform: scale(1.4);
+        transform: scale(0.9);
 
 
     }

@@ -3,6 +3,8 @@
        background-attachment: fixed;
    }
 
+
+
    .container-logos {
        background-color: #ffffff;
    }
@@ -52,8 +54,8 @@
    }
 
    #titleProjectJs {
-
        margin-top: 100px;
+       font: normal normal 500 48px/53px Satisfy;
    }
 
    @keyframes shake {
@@ -192,6 +194,13 @@
            height: 40px !important;
            margin-top: 0px !important;
            margin: auto 0px !important;
+       }
+
+       .navbar-nav .nav-link {
+           color: #281EFF;
+           font-weight: 500;
+           position: relative;
+           transition: color 0.3s ease;
        }
    }
 
@@ -344,12 +353,7 @@
        background: repeating-linear-gradient(45deg, #ffffff 20%, #9afbfe 80%);
    }
 
-   .img-logo-foter {
-       animation: margin 3s infinite !important;
 
-
-
-   }
 
    @keyframes margin {
        0% {
@@ -371,6 +375,28 @@
            display: flex;
            flex-wrap: wrap;
            height: 400px;
+           margin: 0px auto;
+           padding: 0px;
+
+
+       }
+
+       .img-logo-foter {
+           display: flex;
+           flex-wrap: wrap;
+           background-size: 30px !important;
+           width: 40px !important;
+           height: 40px !important;
+           margin: 0px auto;
+       }
+
+       #img-logo-foter {
+           margin: 0px auto;
+           display: flex;
+           flex-wrap: wrap;
+           justify-content: center;
+           align-items: center;
+
 
        }
    }
